@@ -7,6 +7,10 @@ body {
   background-color: ivory;
 }
 
+#intro {
+  visibility: hidden;
+}
+
 #start_button {
   margin: 0 auto;
   display: table;

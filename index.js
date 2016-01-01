@@ -1,18 +1,22 @@
-alert("Welcome to Johnny's bubble game!' \n\nHelp Johnny catch as many bubbles as you can. If more than 10 bubbles pop, Johnny dies, and it becomes the next player's turn.\n\nGOOD LUCK!");
+// alert("Welcome to Johnny's bubble game!' \n\nHelp Johnny catch as many bubbles as you can. If more than 10 bubbles pop, Johnny dies, and it becomes the next player's turn.\n\nGOOD LUCK!");
 
 
+
+// global variables
 var man_column = 0; 
 var score = 0;
 var poppedBubbles = 0;
-var currentPlayer = "PlayerOne";
+// var currentPlayer = "PlayerOne";
 var highScore = localStorage.getItem("high_score");
 
 
-// MOVE MAN HORIZONTALLY
 $(function() {
+
+  $(#intro).fancybox().click();
 
   $("#high_score_dynamic").html(highScore);
 
+  // moves man horizontally
   $(document).keydown(function(e) {
 
      switch (e.which) {
@@ -44,19 +48,16 @@ $(function() {
 });
 
 
-// FUNCTION TO MAKE BUBBLE FALL ON CLICK
-
+// function to make bubble fall on click
 function dropBubble(column, duration) {
   var bubble = $.parseHTML('<div class="bubble"></div>');
 
   var x_pos = 40 * column;
 
-  // assigning different colors to bubbles
-
+  // assigning properties to bubbles
     var red   = Math.floor(Math.random() * 256);
     var green = Math.floor(Math.random() * 256);
     var blue  = Math.floor(Math.random() * 256);
-
 
     $(bubble).css('left', x_pos + 'px');
     $(bubble).css('top', '-25px');
@@ -72,7 +73,7 @@ function dropBubble(column, duration) {
   }
 
 
-  // START GAME (music + balldrops)
+  // START GAME 
   window.addEventListener("DOMContentLoaded", function(event) {
 
   start_button.addEventListener("click", startGame)
@@ -80,14 +81,15 @@ function dropBubble(column, duration) {
   });
 
   function startGame() {
-    console.log(currentPlayer)
+    // console.log(currentPlayer)
     nextDrop(1500 , 2500);
     
   }
 
+// interval / timing of bubbles
   function nextDrop(duration , interval) {
 
-    if (poppedBubbles < 9) {
+    if (poppedBubbles < 10) {
     
       var bubbleDrop = setTimeout(function(){
         dropBubble(Math.floor(Math.random()*20), duration);
@@ -96,6 +98,7 @@ function dropBubble(column, duration) {
     
     } else {
 
+      $(".bubble").remove();
       endGame();
 
     }
@@ -133,7 +136,8 @@ function bubbleHit(bubble, column, duration) {
 
 // SCOREBOARD
 function playerScore() {
-  document.getElementById("score_dynamic").innerHTML = score;
+ 
+    $('#score_dynamic').html(score);
 }
 
 
@@ -141,18 +145,22 @@ function endGame() {
 
   if(score > highScore) {
     setHighScore(score);
+    alert("Congratulations! Your beat all other players with a new high score of " + score + "!");
+  }
+  else {
+    $("<h1>Game Over!</h1>").fancybox().click();
   }
 
-  if (currentPlayer === "playerOne") {
-    currentPlayer = "playerTwo";
-    start_button.addEventListener("click", function() {
-      startGame();
-    });
-  }
+  // if (currentPlayer === "playerOne") {
+  //   currentPlayer = "playerTwo";
+  //   start_button.addEventListener("click", function() {
+  //     startGame();
+  //   });
+  // }
 }
 
 function setHighScore(score) {
-  
+ 
   highScore = score;
   localStorage.setItem("high_score", score);
   $("#high_score_dynamic").html(highScore);
@@ -160,16 +168,16 @@ function setHighScore(score) {
 }
 
 
-// MAX 10 pops before next player - Alert when game over 
-// Move on to next player? How score high score?
-// sound when bubble caught / missed? (+ mute music)?
-// how use fancyapp?
+/// GAME OVER statement
+// How to use funapp and spritely
+/// Pause
+/// Title of game on page
+/// "Play again"
+
+
+//PAUSE BUTTON?
+
+//RESET?
 
 
 
-/// RESET BUTTON??
-
-function addResetListener(){
-  var resetButton = document.getElementById("reset_button");
-  resetButton.addEventListener("click", resetPage);
-}

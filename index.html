@@ -4,20 +4,31 @@
 <title>Johnny's Bubble Game</title>
     <link rel="stylesheet" type="text/css" media="all" href="main.css">
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.spritely/0.6.8/jquery.spritely.min.js"></script>
+    <script type="text/javascript" src="lib/fancybox/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/fancybox/jquery.fancybox.css">
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.spritely/0.6.8/jquery.spritely.min.js"></script> -->
     <script type="text/javascript" src="index.js"></script>
 </head>
 
 <body>
-    <div id="start_game">
-        <button type="button" id="start_button"><strong>Start the Game!</strong></button>
+    <div id="intro">
+        Welcome to Johnny's bubble game! 
+        </br> 
+        Help Johnny catch as many bubbles as you can. If more than 10 bubbles pop, Johnny dies, and it becomes the next player's turn.
+        <br/>
+        GOOD LUCK!
     </div>
+
     <div id="main-container">
         <div id="man"></div>
 
         <div id="ground"></div>
 
         <div id="missed-bubbles">Number of missed bubbles: <label>0</label></div>
+    </div>
+
+    <div id="start_game">
+        <button type="button" id="start_button"><strong>Start the Game!</strong></button>
     </div>
 
     <div id="scoreboard">
