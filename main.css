@@ -20,8 +20,8 @@ html, body, #main-container, .box{
   width: 600px;
   height: 600px;
   margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   background-image: url("images/clouds2.JPG");
   background-size: cover;
   background-repeat: no-repeat;
@@ -41,7 +41,7 @@ html, body, #main-container, .box{
   margin-left: 0px;
   background-color: lightgreen;
 }
-
+/*
 #bubble2 {
   margin-left: 30px;
   background-color: pink;
@@ -55,7 +55,7 @@ html, body, #main-container, .box{
 #bubble4 {
   margin-left: 90px;
   background-color: red;
-}
+}*/
 
 //// continue with individual balls or one that falls randomly?
 
@@ -81,8 +81,16 @@ html, body, #main-container, .box{
   bottom: 0;
 }
 
-button {
+#start_button {
   margin: 0 auto;
+  display: table;
+  margin-top: 20px;
+}
+
+#reset {
+  margin: 0 auto;
+  display: table;
+  margin-bottom: 20px;
 }
 
 .box {
@@ -186,5 +194,4 @@ button {
  #box20 {
    background-color: blue;
 
- }
-*/
+ }*/

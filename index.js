@@ -1,16 +1,24 @@
 
+// Background Music
+window.addEventListener("DOMContentLoaded", function(event) {
 
+start_button.addEventListener("click", function(){
+
+var audio = document.getElementById("background_music");
+audio.src = "sounds/bubble_game2.m4a";
+audio.play();
+
+});
+});
+
+
+// Moving man
 $(function() {
-
   console.log("loaded")
 
   var pos = 0;
 
-
-
   $(document).keydown(function(e) {
-
-   
     var man = parseInt($('#man').css("left"));
 
      switch (e.which) {
@@ -43,3 +51,12 @@ $(function() {
      }
  });
 });
+
+
+
+/// Reset button
+
+function addResetListener(){
+  var resetButton = document.getElementById("reset_button");
+  resetButton.addEventListener("click", resetPage);
+}
