@@ -1,13 +1,18 @@
-alert("Welcome to Johnny's bubble game!' \n\nYour task is to help Johnny catch as many bubbles as you can. If more than 10 bubbles pop, Johnny dies and it becomes the next player's turn. \n\nClick 'Start the Game!' when ready. \n\nGOOD LUCK!");
+alert("Welcome to Johnny's bubble game!' \n\nHelp Johnny catch as many bubbles as you can. If more than 10 bubbles pop, Johnny dies, and it becomes the next player's turn.\n\nGOOD LUCK!");
 
 
 var man_column = 0; 
 var score = 0;
 var poppedBubbles = 0;
 var currentPlayer = "PlayerOne";
+var highScore = localStorage.getItem("high_score");
+
 
 // MOVE MAN HORIZONTALLY
 $(function() {
+
+  $("#high_score_dynamic").html(highScore);
+
   $(document).keydown(function(e) {
 
      switch (e.which) {
@@ -34,12 +39,6 @@ $(function() {
         }, 40); // RIGHT
        }
        break;
-
-       // case 40:
-       // $('#man').animate({
-       //  top: '-30px'
-       // }); // DOWN
-       // break;
      }
  });
 });
@@ -82,30 +81,28 @@ function dropBubble(column, duration) {
 
   function startGame() {
     console.log(currentPlayer)
-    nextDrop(2000 , 2500);
+    nextDrop(1500 , 2500);
     
-    // var audio = document.getElementById("background_music");
-    // audio.src = "sounds/bubble_game2.m4a";
-    // audio.play();
   }
 
   function nextDrop(duration , interval) {
 
-    var bubbleDrop = setTimeout(function(){
+    if (poppedBubbles < 9) {
+    
+      var bubbleDrop = setTimeout(function(){
+        dropBubble(Math.floor(Math.random()*20), duration);
+        nextDrop(duration - 5, interval - 30 );
+      } , interval);
+    
+    } else {
 
-      dropBubble(Math.floor(Math.random()*20), duration);
-      nextDrop(duration , interval - 40 );
-
-    } , interval);
-
-    if (poppedBubbles >= 10) {
+      endGame();
 
     }
-
   }
 
 
-// determine where bubble is caught or lost
+// determine win or loss
 function bubbleHit(bubble, column, duration) {
   console.log("hello");
 
@@ -118,7 +115,7 @@ function bubbleHit(bubble, column, duration) {
     score--;
     new Audio("sounds/bubble-pop.wav").play();
     poppedBubbles++;
-    console.log(poppedBubbles);
+
     $('#missed-bubbles label').html(poppedBubbles);
     $(bubble).animate(
       {
@@ -132,21 +129,34 @@ function bubbleHit(bubble, column, duration) {
 
   playerScore();
 
-  // SCOREBOARD
-  function playerScore() {
-    document.getElementById("score_dynamic").innerHTML = score;
-  }
+}
 
+// SCOREBOARD
+function playerScore() {
+  document.getElementById("score_dynamic").innerHTML = score;
 }
 
 
 function endGame() {
+
+  if(score > highScore) {
+    setHighScore(score);
+  }
+
   if (currentPlayer === "playerOne") {
     currentPlayer = "playerTwo";
     start_button.addEventListener("click", function() {
       startGame();
     });
   }
+}
+
+function setHighScore(score) {
+  
+  highScore = score;
+  localStorage.setItem("high_score", score);
+  $("#high_score_dynamic").html(highScore);
+
 }
 
 

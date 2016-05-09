@@ -11,7 +11,8 @@ body {
   margin: 0 auto;
   display: table;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #main-container {
@@ -24,6 +25,16 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+}
+
+#missed-bubbles {
+  position: absolute;
+  right: 0;
+  font-size: 12px;
+  color: white;
+  background-color: #CC0000;
+  padding: 15px 30px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 #scoreboard {
@@ -50,9 +61,9 @@ body {
 }
 
 #score_dynamic, #high_score_dynamic {
-  background-color: gray;
+/*  background-color: skyblue;*/
   margin: 0 auto;
-  color: white;
+/*  color: black;*/
   text-align: center;
   font-size: 30px;
   margin-top: 10px;
@@ -101,20 +112,10 @@ body {
   z-index: 1;
 }
 
-#reset {
+/*#reset {
   margin: 0 auto;
   display: table;
   margin-bottom: 20px;
-}
-
-#missed-bubbles {
-  position: absolute;
-  right: 0;
-  color: black;
-  background-color: #CC0000;
-  padding: 15px 30px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
-
+}*/
 
 */
