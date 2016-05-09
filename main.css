@@ -50,7 +50,7 @@ body {
 }
 
 #score_dynamic, #high_score_dynamic {
-  background-color: #CC0000;
+  background-color: gray;
   margin: 0 auto;
   color: white;
   text-align: center;
@@ -105,6 +105,15 @@ body {
   margin: 0 auto;
   display: table;
   margin-bottom: 20px;
+}
+
+#missed-bubbles {
+  position: absolute;
+  right: 0;
+  color: black;
+  background-color: #CC0000;
+  padding: 15px 30px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 
