@@ -4,7 +4,7 @@ My first project from immersive course at GA
 
 USER STORY
 
-3. My player needs to be able to see browser
+<!-- 3. My player needs to be able to see browser -->
 4. My player needs to be able to see a player
 5. My player needs to be able to move left/right
 

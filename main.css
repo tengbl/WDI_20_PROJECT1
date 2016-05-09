@@ -6,85 +6,86 @@
 body {
   background-color: ivory;
 }
-html, body, #main-container, .box{
-/*  background-color: ivory;
-  border: 2px solid black;
-  width: 700px;
-  height: 700px;
-  margin: 0 auto;*/
-  height: 100%;
+
+#start_button {
+  margin: 0 auto;
+  display: table;
+  margin-top: 10px;
 }
 
 #main-container {
-  overflow: hidden;
-  width: 600px;
+  width: 800px;
   height: 600px;
   margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-image: url("images/clouds2.JPG");
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 }
 
+#scoreboard {
+  width: 600px;
+  height: 100px;
+  background-color: #734d26;
+  margin: 0 auto;
+  border: white solid 10px;
+  opacity: 0.9;
+  color: black;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#current_score {
+  float: left;
+  margin: 10px 50px 10px 80px;
+  display: inline-block;
+}
+
+#score_dynamic {
+  background-color: red;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+#top_player {
+  float: right;
+  margin: 10px 80px 10px 50px;
+}
+
 .bubble {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   position: absolute;
   opacity: 0.9;
   top: 0;
+  z-index: 5;
 }
-
-#bubble1 {
-  margin-left: 0px;
-  background-color: lightgreen;
-}
-/*
-#bubble2 {
-  margin-left: 30px;
-  background-color: pink;
-}
-
-#bubble3 {
-  margin-left: 60px;
-  background-color: black;
-}
-
-#bubble4 {
-  margin-left: 90px;
-  background-color: red;
-}*/
-
-//// continue with individual balls or one that falls randomly?
 
 #man {
-  background: url("images/stick-man.png");
+  width: 30px;
+  height: 60px;
+  background-image: url("images/stick-man.png");
   background-size: cover;
-  width: 25px;
-  height: 50px;
   border: 2px;
   position: absolute;
-  bottom: 50px;
+  bottom: 40px;
   z-index: 3;
-  left: 0;
+  left: 0px;
 }
 
 #ground {
   width: 100%;
-  height: 50px;
-  background-color: #ac7e54;
+  height: 530px;
+  background-image: url("images/ground_animated.png");
+  background-size: cover;
   margin: 0 auto;
-  margin-top: 530px;
   position: absolute;
   bottom: 0;
-}
-
-#start_button {
-  margin: 0 auto;
-  display: table;
-  margin-top: 20px;
+  z-index: 1;
 }
 
 #reset {
@@ -93,105 +94,53 @@ html, body, #main-container, .box{
   margin-bottom: 20px;
 }
 
+
+
+/*DIVISION OF SCREEN INTO VERTICAL COLUMNS - for illustrative purposes*/
+
+/*
 .box {
   float: left;
   width: 5%;
 }
-/*
-#box1 {
-  background-color: green;
 
-}
+#box1 { background-color: green; }
 
-#box2 {
-  background-color: blue;
-}
+#box2 { background-color: blue; }
 
-#box3 {
-  background-color: red;
+#box3 { background-color: red;}
 
-}
+#box4 { background-color: green; }
 
-#box4 {
-  background-color: green;
+#box5 { background-color: blue; }
 
-}
+#box6 { background-color: red; }
 
-#box5 {
-  background-color: blue;
+#box7 { background-color: green; }
 
-}
+#box8 { background-color: blue; }
 
-#box6 {
-  background-color: red;
+#box9 { background-color: red; }
 
-}
+#box10 { background-color: green; }
 
-#box7 {
-  background-color: green;
+#box11 { background-color: blue; }
 
-}
+ #box12 { background-color: red;}
 
-#box8 {
-  background-color: blue;
+ #box13 { background-color: green;}
 
-}
+ #box14 { background-color: blue; }
 
-#box9 {
-  background-color: red;
-}
+ #box15 { background-color: red; }
 
- #box10 {
-   background-color: green;
+ #box16 { background-color: green; }
 
- }
+ #box17 { background-color: blue; }
 
- #box11 {
-   background-color: blue;
+ #box18 { background-color: red; }
 
- }
+ #box19 { background-color: green; }
 
- #box12 {
-   background-color: red;
-
- }
-
- #box13 {
-   background-color: green;
-
- }
-
- #box14 {
-   background-color: blue;
-
- }
-
- #box15 {
-   background-color: red;
-
- }
-
- #box16 {
-   background-color: green;
-
- }
-
- #box17 {
-   background-color: blue;
-
- }
-
- #box18 {
-   background-color: red;
-
- }
-
- #box19 {
-   background-color: green;
-
- }
-
- #box20 {
-   background-color: blue;
-
- }*/
+ #box20 { background-color: blue; }
+*/
