@@ -10,7 +10,7 @@
 <body>
     <div id="start_game">
         <audio id="background_music"></audio>
-        <button type="button" id="start_button" onclick="dropBubble(Math.floor(Math.random()*40), 4000)">Start the Game!</button>
+        <button type="button" id="start_button">Start the Game!</button>
     </div>
     <div id="main-container">
         <div id="man"></div>
@@ -41,9 +41,11 @@
     <div id="scoreboard">
         <div id="current_score">
             <strong>Current score:</strong>
-            <div id="score_dynamic">Hello</div>
+            <div id="score_dynamic">0</div>
         </div>
-        <div id="top_player"><strong>Top players:</strong></div>
+        <div id="high_score">
+            <strong>High Score:</strong></div>
+            <div id="high_score_dynamic">0</div>
     </div>
 
 <!--       <div id="reset">

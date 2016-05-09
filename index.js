@@ -4,19 +4,31 @@ window.addEventListener("DOMContentLoaded", function(event) {
 
 start_button.addEventListener("click", function(){
 
-var audio = document.getElementById("background_music");
-audio.src = "sounds/bubble_game2.m4a";
-audio.play();
+  nextDrop(2000 , 3000);
+  
+  var audio = document.getElementById("background_music");
+  audio.src = "sounds/bubble_game2.m4a";
+  audio.play();
 
+  });
 });
-});
+
+function nextDrop(duration , interval) {
+
+  setTimeout(function(){
+
+    dropBubble(Math.floor(Math.random()*20), duration);
+    nextDrop(duration - 50 , interval - 100 );
+
+  } , interval);
+
+}
 
 /// MUTE MUSIC
 
 
 var man_column = 0; 
 var score = 0;
-playerScore();
 
 // MOVING MAN HORIZONTALLY
 $(function() {
@@ -46,29 +58,31 @@ $(function() {
 
 
 // FUNCTION TO MAKE BUBBLE FALL ON CLICK
+
 function dropBubble(column, duration) {
   var bubble = $.parseHTML('<div class="bubble"></div>');
 
   var x_pos = 40 * column;
 
   // assigning different colors to bubbles
-  var red   = Math.floor(Math.random() * 256);
-  var green = Math.floor(Math.random() * 256);
-  var blue  = Math.floor(Math.random() * 256);
+
+    var red   = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue  = Math.floor(Math.random() * 256);
 
 
-  $(bubble).css('left', x_pos);
-  $(bubble).css('top', '-25px');
-  $(bubble).css('background-color', 'rgb('+red+', '+green+', '+blue+')');
+    $(bubble).css('left', x_pos + 'px');
+    $(bubble).css('top', '-25px');
+    $(bubble).css('background-color', 'rgb('+red+', '+green+', '+blue+')');
 
-  $('#main-container').append(bubble);
-  $(bubble).animate( 
-    {top: '480px'},
-    duration * 1,
-    "linear",
-    function () { bubbleHit(bubble, column, duration); }
-  );
-}
+    $('#main-container').append(bubble);
+    $(bubble).animate( 
+      {top: '470px'},
+      duration * 1, 
+      "linear",
+      function () { bubbleHit(bubble, column, duration); }
+    );
+  }
 
 
 // determine where bubble is caught or lost
@@ -90,14 +104,18 @@ function bubbleHit(bubble, column, duration) {
       function () { $(bubble).remove(); }
     );
   }
-  console.log(score);
+
+  playerScore();
+
+  // SCOREBOARD
+  function playerScore() {
+    document.getElementById("score_dynamic").innerHTML = score;
+  }
+
 }
-// 
 
 
-// SCOREBOARD
-function playerScore() {}
-  document.getElementById("score_dynamic").innerHTML = score;
+
 
 
 

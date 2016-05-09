@@ -38,21 +38,35 @@ body {
 
 #current_score {
   float: left;
-  margin: 10px 50px 10px 80px;
+  margin: 5px 50px 10px 80px;
   display: inline-block;
 }
 
 #score_dynamic {
-  background-color: red;
+  background-color: ivory;
   margin: 0 auto;
+  color: black;
+  text-align: center;
+  font-size: 30px;
   margin-top: 10px;
   width: 60px;
-  height: 60px;
+  height: 50px;
 }
 
-#top_player {
+#high_score_dynamic {
+  background-color: ivory;
+  margin: 0 auto;
+  color: black;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+  width: 60px;
+  height: 50px;
+}
+
+#high_score {
   float: right;
-  margin: 10px 80px 10px 50px;
+  margin: 5px 80px 10px 50px;
 }
 
 .bubble {
@@ -61,7 +75,6 @@ body {
   border-radius: 50%;
   position: absolute;
   opacity: 0.9;
-  top: 0;
   z-index: 5;
 }
 
