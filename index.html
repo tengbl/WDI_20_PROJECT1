@@ -1,46 +1,30 @@
 <!doctype html>
 <html>
 <head>
-<title>Bubble Game</title>
+<title>Johnny's Bubble Game</title>
     <link rel="stylesheet" type="text/css" media="all" href="main.css">
+    
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    
     <script type="text/javascript" src="index.js"></script>
 </head>
 
 <body>
     <div id="start_game">
         <audio id="background_music"></audio>
-        <button type="button" id="start_button">Start the Game!</button>
+        <button type="button" id="start_button"><strong>Start the Game!</strong></button>
     </div>
     <div id="main-container">
         <div id="man"></div>
-<!-- 
-        <div class="box" id="box1"></div>
-        <div class="box" id="box2"></div>
-        <div class="box" id="box3"></div>
-        <div class="box" id="box4"></div>
-        <div class="box" id="box5"></div>
-        <div class="box" id="box6"></div>
-        <div class="box" id="box7"></div>
-        <div class="box" id="box8"></div>
-        <div class="box" id="box9"></div>
-        <div class="box" id="box10"></div>
-        <div class="box" id="box11"></div>
-        <div class="box" id="box12"></div>
-        <div class="box" id="box13"></div>
-        <div class="box" id="box14"></div>
-        <div class="box" id="box15"></div>
-        <div class="box" id="box16"></div>
-        <div class="box" id="box17"></div>
-        <div class="box" id="box18"></div>
-        <div class="box" id="box19"></div>
-        <div class="box" id="box20"></div> -->
+
         <div id="ground"></div>
     </div>
 
     <div id="scoreboard">
         <div id="current_score">
-            <strong>Current score:</strong>
+            <strong>Current Score:</strong>
             <div id="score_dynamic">0</div>
         </div>
         <div id="high_score">

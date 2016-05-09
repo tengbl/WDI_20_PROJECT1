@@ -10,6 +10,7 @@ body {
 #start_button {
   margin: 0 auto;
   display: table;
+  padding: 10px;
   margin-top: 10px;
 }
 
@@ -28,7 +29,7 @@ body {
 #scoreboard {
   width: 600px;
   height: 100px;
-  background-color: #734d26;
+  background-color: skyblue;
   margin: 0 auto;
   border: white solid 10px;
   opacity: 0.9;
@@ -42,31 +43,30 @@ body {
   display: inline-block;
 }
 
-#score_dynamic {
-  background-color: ivory;
-  margin: 0 auto;
-  color: black;
-  text-align: center;
-  font-size: 30px;
-  margin-top: 10px;
-  width: 60px;
-  height: 50px;
-}
-
-#high_score_dynamic {
-  background-color: ivory;
-  margin: 0 auto;
-  color: black;
-  text-align: center;
-  font-size: 30px;
-  margin-top: 10px;
-  width: 60px;
-  height: 50px;
-}
-
 #high_score {
   float: right;
   margin: 5px 80px 10px 50px;
+  display: inline-block;
+}
+
+#score_dynamic, #high_score_dynamic {
+  background-color: #CC0000;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+  width: 60px;
+  height: 50px;
+}
+
+#score_dynamic {
+  margin-left: 20px;
+}
+
+#high_score_dynamic {
+  margin-right: 100px;
+  margin-top: 38px;
 }
 
 .bubble {
@@ -108,52 +108,4 @@ body {
 }
 
 
-
-/*DIVISION OF SCREEN INTO VERTICAL COLUMNS - for illustrative purposes*/
-
-/*
-.box {
-  float: left;
-  width: 5%;
-}
-
-#box1 { background-color: green; }
-
-#box2 { background-color: blue; }
-
-#box3 { background-color: red;}
-
-#box4 { background-color: green; }
-
-#box5 { background-color: blue; }
-
-#box6 { background-color: red; }
-
-#box7 { background-color: green; }
-
-#box8 { background-color: blue; }
-
-#box9 { background-color: red; }
-
-#box10 { background-color: green; }
-
-#box11 { background-color: blue; }
-
- #box12 { background-color: red;}
-
- #box13 { background-color: green;}
-
- #box14 { background-color: blue; }
-
- #box15 { background-color: red; }
-
- #box16 { background-color: green; }
-
- #box17 { background-color: blue; }
-
- #box18 { background-color: red; }
-
- #box19 { background-color: green; }
-
- #box20 { background-color: blue; }
 */

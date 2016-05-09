@@ -1,39 +1,12 @@
-
-// BACGROUND MUSIC
-window.addEventListener("DOMContentLoaded", function(event) {
-
-start_button.addEventListener("click", function(){
-
-  nextDrop(2000 , 3000);
-  
-  var audio = document.getElementById("background_music");
-  audio.src = "sounds/bubble_game2.m4a";
-  audio.play();
-
-  });
-});
-
-function nextDrop(duration , interval) {
-
-  setTimeout(function(){
-
-    dropBubble(Math.floor(Math.random()*20), duration);
-    nextDrop(duration - 50 , interval - 100 );
-
-  } , interval);
-
-}
-
-/// MUTE MUSIC
+alert("Welcome to Johnny's bubble game!' \n\nYour task is to help Johnny catch as many bubbles as you can. If more than 10 bubbles pop, Johnny dies and it becomes the next player's turn. \n\nClick 'Start the Game' when ready. \n\nGOOD LUCK!");
 
 
 var man_column = 0; 
 var score = 0;
 
-// MOVING MAN HORIZONTALLY
+// MOVE MAN HORIZONTALLY
 $(function() {
   $(document).keydown(function(e) {
-    // var man = parseInt($('#man').css("left"));
 
      switch (e.which) {
        case 37:
@@ -85,6 +58,32 @@ function dropBubble(column, duration) {
   }
 
 
+  // START GAME (music + balldrops)
+  window.addEventListener("DOMContentLoaded", function(event) {
+
+  start_button.addEventListener("click", function(){
+
+    nextDrop(2000 , 2500);
+    
+    var audio = document.getElementById("background_music");
+    audio.src = "sounds/bubble_game2.m4a";
+    audio.play();
+
+    });
+  });
+
+  function nextDrop(duration , interval) {
+
+    setTimeout(function(){
+
+      dropBubble(Math.floor(Math.random()*20), duration);
+      nextDrop(duration , interval - 40 );
+
+    } , interval);
+
+  }
+
+
 // determine where bubble is caught or lost
 function bubbleHit(bubble, column, duration) {
   console.log("hello");
@@ -98,8 +97,8 @@ function bubbleHit(bubble, column, duration) {
     $(bubble).animate(
       {
         opacity: 0,
-        width: '400px',
-        height: '400px',
+        width: '600px',
+        height: '600px',
       },
       function () { $(bubble).remove(); }
     );
@@ -115,11 +114,15 @@ function bubbleHit(bubble, column, duration) {
 }
 
 
+// NEXT PLAYER? 
+// MAX 10 pops before next player - Alert when game over - 
+// Move on to next player? How score high score?
+// sound when bubble caught / missed?
+// mute music?
 
 
 
-
-/// RESET BUTTON
+/// RESET BUTTON??
 
 function addResetListener(){
   var resetButton = document.getElementById("reset_button");
