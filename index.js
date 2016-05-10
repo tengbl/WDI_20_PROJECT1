@@ -12,7 +12,7 @@ var highScore = localStorage.getItem("high_score");
 
 $(function() {
 
-  $("<h1>Welcome to Johnny's bubble game</h1>").fancybox().click();
+  $("#fancybox_intro").fancybox().click();
 
   $("#high_score_dynamic").html(highScore);
 
@@ -29,11 +29,18 @@ $(function() {
         }
        break;
 
-       // case 38:
-       // $('#man').animate({
-       //  top: '+30px'
-       // }); // UP
-       // break;
+       case 38:
+       $('#man').animate({
+        bottom: '+=30px'
+       });
+
+       setTimeout(function() {
+        $('#man').animate({
+         bottom: '-=30px'
+        });
+       }, 500) // UP
+
+       break;
 
        case 39:
        if(man_column < 19) {
@@ -145,10 +152,12 @@ function endGame() {
 
   if(score > highScore) {
     setHighScore(score);
-   $("<h1>Congratulations! You have the new high score of </h1>" + score).fancybox().click();
+    $("#final_score").html(score);
+    $("#fancybox_high_score").fancybox().click();
   }
   else {
-    $("<h1>Game Over! Your score is </h1>" + score).fancybox().click();
+    $("#final_score").html(score);
+    $("#fancybox_gameOver").fancybox().click();
   }
 
   // if (currentPlayer === "playerOne") {
@@ -168,15 +177,12 @@ function setHighScore(score) {
 }
 
 
-/// Correct game over statement + write in html
+/// Correct game over / intro statement
+  //- How to write several paragraphs
+  //- How to write in html
+/// Include buton in fancybox
+/// Jump (limited)!
 /// Pause?
-/// Title of game on page
 /// "Play again"
-
-
-//PAUSE BUTTON?
-
-//RESET?
-
 
 

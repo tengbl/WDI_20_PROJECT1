@@ -11,25 +11,29 @@
 </head>
 
 <body>
-    <h1 id="header">Johnny's Bubble Game</h1>
-<!--     <div id="intro">
-        Welcome to Johnny's bubble game! 
+    
+<!-- Intro in fancybox -->
+    <div id="fancybox_intro">
+        <h2>Welcome to Johnny's bubble game!</h2> 
         </br> 
-        Help Johnny catch as many bubbles as you can. If more than 10 bubbles pop, Johnny dies, and it becomes the next player's turn.
+        <h3>Help Johnny catch as many bubbles as you can. If more than 10 bubbles pop, Johnny dies, and it becomes the next player's turn.</h3>
         <br/>
-        GOOD LUCK -->
+        <h3>GOOD LUCK</h3>
+
+        <div id="start_game">
+            <button type="button" id="start_button"><strong>Start the Game!</strong></button>
+        </div>
     </div>
+<!--  -->
 
     <div id="main-container">
+        <h1 id="header">Johnny's Bubble Game</h1>
+        
         <div id="man"></div>
 
         <div id="ground"></div>
 
         <div id="missed-bubbles">Number of missed bubbles: <label>0</label></div>
-    </div>
-
-    <div id="start_game">
-        <button type="button" id="start_button"><strong>Start the Game!</strong></button>
     </div>
 
     <div id="scoreboard">
@@ -42,10 +46,21 @@
             <div id="high_score_dynamic">0</div>
     </div>
 
+    <!-- Game Over in fancybox -->
+        <div id="fancybox_high_score">
+            <p>Congratulations! Your score of <div id="final_score"></div> is the new high score</p>
+        </div>
+        <div id="fancybox_gameOver">
+            <p>Game Over! Your score is <div id="final_score"></div>!</p>
+        </div>
+            
+     <!--        <div id="start_game">
+                <button type="button" id="start_button"><strong>Start the Game!</strong></button>
+            </div> -->
+        </div>
+    <!--  -->
 
-<!--       <div id="reset">
-        <button id="reset_button">Play Again</button>
-      </div> -->
+
 </body>
 </html>
 

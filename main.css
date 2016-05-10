@@ -9,18 +9,10 @@ body {
   background-repeat: no-repeat;
 }
 
-/*#intro {
-  visibility: hidden;
-}*/
-
-#header {
-  color: #CC66CC;
-  margin-left: 60px;
-  font-size: 60px;
-  margin-top: 30px;
-  opacity: 0.8;
-  z-index: 5;
-  position: absolute;
+#fancybox_intro, #fancybox_high_score, #fancybox_gameOver {
+  display: none;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 #main-container {
@@ -36,6 +28,15 @@ body {
   z-index: 2;
 }
 
+#header {
+  color: skyblue;
+  font-size: 60px;
+  margin-left: 20px;
+  margin-top: -25px;
+  opacity: 0.8;
+  z-index: 5;
+  position: absolute;
+}
 
 #missed-bubbles {
   position: absolute;
@@ -58,7 +59,7 @@ body {
 #scoreboard {
   width: 600px;
   height: 100px;
-  background-color: #CC66CC;
+  background-color: skyblue;
   margin: 0 auto;
   border: white solid 10px;
   opacity: 0.9;
@@ -129,11 +130,3 @@ body {
   bottom: 0;
   z-index: 1;
 }
-
-/*#reset {
-  margin: 0 auto;
-  display: table;
-  margin-bottom: 20px;
-}*/
-
-*/
