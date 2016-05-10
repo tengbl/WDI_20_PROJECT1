@@ -12,7 +12,7 @@ var highScore = localStorage.getItem("high_score");
 
 $(function() {
 
-  $(#intro).fancybox().click();
+  $("<h1>Welcome to Johnny's bubble game</h1>").fancybox().click();
 
   $("#high_score_dynamic").html(highScore);
 
@@ -98,7 +98,7 @@ function dropBubble(column, duration) {
     
     } else {
 
-      $(".bubble").remove();
+      $(".bubble").stop();
       endGame();
 
     }
@@ -145,10 +145,10 @@ function endGame() {
 
   if(score > highScore) {
     setHighScore(score);
-    alert("Congratulations! Your beat all other players with a new high score of " + score + "!");
+   $("<h1>Congratulations! You have the new high score of </h1>" + score).fancybox().click();
   }
   else {
-    $("<h1>Game Over!</h1>").fancybox().click();
+    $("<h1>Game Over! Your score is </h1>" + score).fancybox().click();
   }
 
   // if (currentPlayer === "playerOne") {
@@ -168,9 +168,8 @@ function setHighScore(score) {
 }
 
 
-/// GAME OVER statement
-// How to use funapp and spritely
-/// Pause
+/// Correct game over statement + write in html
+/// Pause?
 /// Title of game on page
 /// "Play again"
 
