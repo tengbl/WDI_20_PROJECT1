@@ -6,26 +6,25 @@
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <script type="text/javascript" src="lib/fancybox/jquery.fancybox.pack.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/fancybox/jquery.fancybox.css">
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.spritely/0.6.8/jquery.spritely.min.js"></script> -->
     <script type="text/javascript" src="index.js"></script>
 </head>
 
 <body>
     
-<!-- Intro in fancybox -->
+<!-- INTRO IN FANCYBOX -->
     <div id="fancybox_intro">
         <h2>Welcome to Johnny's bubble game!</h2> 
         </br> 
         <h3>Help Johnny catch as many bubbles as you can. If more than 10 bubbles pop, Johnny dies, and it becomes the next player's turn.</h3>
         <br/>
-        <h3>GOOD LUCK</h3>
+        <h3>GOOD LUCK!</h3>
 
         <div id="start_game">
             <button type="button" id="start_button"><strong>Start the Game!</strong></button>
         </div>
     </div>
-<!--  -->
 
+<!-- MAIN SCREEN -->
     <div id="main-container">
         <h1 id="header">Johnny's Bubble Game</h1>
         
@@ -46,20 +45,27 @@
             <div id="high_score_dynamic">0</div>
     </div>
 
-    <!-- Game Over in fancybox -->
+<!-- GAME OVER IN FANCYBOX -->
         <div id="fancybox_high_score">
-            <p>Congratulations! Your score of <div id="final_score"></div> is the new high score</p>
-        </div>
-        <div id="fancybox_gameOver">
-            <p>Game Over! Your score is <div id="final_score"></div>!</p>
-        </div>
-            
-     <!--        <div id="start_game">
-                <button type="button" id="start_button"><strong>Start the Game!</strong></button>
-            </div> -->
-        </div>
-    <!--  -->
+            <p>Congratulations!</p> 
+            </br>
+            <p>Your score of <div class="final_score"></div> is the new high score!</p>
 
+         <div class="reset_button">
+             <button type="button"><strong>Play Again!</strong></button>
+         </div>
+        </div>
+
+        <div id="fancybox_gameOver">
+            <p>Game Over!</p>
+            </br>
+            <p>Your score is <div class="final_score"></div></p>
+
+            <div class="reset_button">
+                <button type="button"><strong>Play Again!</strong></button>
+            </div>
+        </div>
+<!--  -->
 
 </body>
 </html>

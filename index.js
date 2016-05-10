@@ -14,6 +14,11 @@ $(function() {
 
   $("#fancybox_intro").fancybox().click();
 
+  $('#start_button').click(function(e) {
+    e.stopPropagation();
+    $.fancybox.close();
+  })
+
   $("#high_score_dynamic").html(highScore);
 
   // moves man horizontally
@@ -55,6 +60,18 @@ $(function() {
 });
 
 
+// START GAME 
+window.addEventListener("DOMContentLoaded", function(event) {
+
+start_button.addEventListener("click", startGame)
+
+});
+
+function startGame() {
+  nextDrop(1800 , 2500);
+  
+}
+
 // function to make bubble fall on click
 function dropBubble(column, duration) {
   var bubble = $.parseHTML('<div class="bubble"></div>');
@@ -80,19 +97,6 @@ function dropBubble(column, duration) {
   }
 
 
-  // START GAME 
-  window.addEventListener("DOMContentLoaded", function(event) {
-
-  start_button.addEventListener("click", startGame)
-  
-  });
-
-  function startGame() {
-    // console.log(currentPlayer)
-    nextDrop(1500 , 2500);
-    
-  }
-
 // interval / timing of bubbles
   function nextDrop(duration , interval) {
 
@@ -106,6 +110,7 @@ function dropBubble(column, duration) {
     } else {
 
       $(".bubble").stop();
+      $(".bubble").remove();
       endGame();
 
     }
@@ -152,20 +157,14 @@ function endGame() {
 
   if(score > highScore) {
     setHighScore(score);
-    $("#final_score").html(score);
+    $(".final_score").html(score);
     $("#fancybox_high_score").fancybox().click();
   }
   else {
-    $("#final_score").html(score);
+    $(".final_score").html(score);
     $("#fancybox_gameOver").fancybox().click();
   }
 
-  // if (currentPlayer === "playerOne") {
-  //   currentPlayer = "playerTwo";
-  //   start_button.addEventListener("click", function() {
-  //     startGame();
-  //   });
-  // }
 }
 
 function setHighScore(score) {
@@ -177,12 +176,29 @@ function setHighScore(score) {
 }
 
 
-/// Correct game over / intro statement
-  //- How to write several paragraphs
-  //- How to write in html
-/// Include buton in fancybox
+// RESET GAME
+window.addEventListener("DOMContentLoaded", function(event) {
+$('.reset_button button').on("click", function(e) {
+  e.stopPropagation();
+  $.fancybox.close();
+
+  score = 0;
+  $('#score_dynamic').html(score);
+
+  poppedBubbles = 0;
+  $('#missed-bubbles label').html(poppedBubbles);
+
+  startGame();
+})
+
+});
+
+function startGame() {
+  nextDrop(1800 , 2500);
+}
+
+
+
+
 /// Jump (limited)!
-/// Pause?
-/// "Play again"
-
-
+/// Play again button
