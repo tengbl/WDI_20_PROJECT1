@@ -16,7 +16,7 @@ body {
   margin: 0 auto;
   margin-top: 40px;
   margin-bottom: 10px;
-  background-image: url("images/clouds2.JPG");
+  background-image: url("images/valleyanimated.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -24,19 +24,19 @@ body {
 }
 
 #header {
-  color: skyblue;
+  color: #003399;
   font-size: 55px;
   margin-left: 20px;
-  margin-top: -25px;
+  margin-top: 0px;
   opacity: 0.8;
   z-index: 5;
   position: absolute;
 }
 
-#missed-bubbles {
+#popped-bubbles {
   position: absolute;
   right: 0;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   background-color: #CC0000;
   padding: 15px 30px;
@@ -44,9 +44,9 @@ body {
 }
 
 #man {
-  width: 30px;
-  height: 60px;
-  background-image: url("images/stick-man.png");
+  width: 60px;
+  height: 65px;
+  background-image: url("images/skeebo.png");
   background-size: cover;
   border: 2px;
   position: absolute;
@@ -131,16 +131,15 @@ body {
 }
 
 #start_button {
-  margin: 0 auto;
-  display: table;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
+   padding: 10px;
+   margin-top: 30px;
+   margin-bottom: 5px;
+   text-align: center;
+ }
 
-.reset_button {
-  margin-top: 5px;
-  padding: 30px;
+.reset_button button {
+  padding: 10px;
+  margin-top: 30px;
   margin-bottom: 5px;
   text-align: center;
 }

@@ -1,17 +1,17 @@
-// alert("Welcome to Johnny's bubble game!' \n\nHelp Johnny catch as many bubbles as you can. If more than 10 bubbles pop, Johnny dies, and it becomes the next player's turn.\n\nGOOD LUCK!");
-
-
-
-// global variables
-var man_column = 0; 
-var score = 0;
+// GLOBAL VARIABLES
+var man_column    = 0; 
+var score         = 0;
 var poppedBubbles = 0;
-// var currentPlayer = "PlayerOne";
+var flag = true;
+// var myAudio = new Audio("sounds/background_music.wav")
+
 var highScore = localStorage.getItem("high_score");
 
 
 $(function() {
 
+
+  //FANCYBOX
   $("#fancybox_intro").fancybox().click();
 
   $('#start_button').click(function(e) {
@@ -21,11 +21,12 @@ $(function() {
 
   $("#high_score_dynamic").html(highScore);
 
-  // moves man horizontally
+  // HORIZONTAL MOVEMENT
   $(document).keydown(function(e) {
 
      switch (e.which) {
        case 37:
+       flag = true;
         if (man_column > 0) {
           man_column--;
           $('#man').animate({
@@ -35,19 +36,26 @@ $(function() {
        break;
 
        case 38:
-       $('#man').animate({
-        bottom: '+=30px'
-       });
-
-       setTimeout(function() {
+       if (flag) {
         $('#man').animate({
-         bottom: '-=30px'
+         bottom: '+=30px'
         });
-       }, 500) // UP
 
+        $('*').off('keydown');
+        setTimeout(function() {
+         $('#man').animate({
+          bottom: '-=30px'
+         });
+        }, 500) // UP
+       }
+
+       flag = false
+
+       
        break;
 
        case 39:
+       flag = true;
        if(man_column < 19) {
         man_column++;
         $('#man').animate({
@@ -60,7 +68,7 @@ $(function() {
 });
 
 
-// START GAME 
+// startGame: START GAME 
 window.addEventListener("DOMContentLoaded", function(event) {
 
 start_button.addEventListener("click", startGame)
@@ -68,17 +76,20 @@ start_button.addEventListener("click", startGame)
 });
 
 function startGame() {
-  nextDrop(1800 , 2500);
-  
+
+  // myAudio.play();
+  // myAudio.loop = true;
+
+  nextDrop(1800 , 1800);
 }
 
-// function to make bubble fall on click
+// dropBubble: DROP BUBBLE ON CLICK
 function dropBubble(column, duration) {
   var bubble = $.parseHTML('<div class="bubble"></div>');
 
   var x_pos = 40 * column;
 
-  // assigning properties to bubbles
+  // ASSIGN PROPERTIES TO BUBBLES
     var red   = Math.floor(Math.random() * 256);
     var green = Math.floor(Math.random() * 256);
     var blue  = Math.floor(Math.random() * 256);
@@ -97,14 +108,14 @@ function dropBubble(column, duration) {
   }
 
 
-// interval / timing of bubbles
+// nextDrop: INTERVAL / TIMING OF BUBBLES
   function nextDrop(duration , interval) {
 
     if (poppedBubbles < 10) {
     
       var bubbleDrop = setTimeout(function(){
         dropBubble(Math.floor(Math.random()*20), duration);
-        nextDrop(duration - 5, interval - 30 );
+        nextDrop(duration - 10, interval - 30 );
       } , interval);
     
     } else {
@@ -117,7 +128,7 @@ function dropBubble(column, duration) {
   }
 
 
-// determine win or loss
+// bubbleHit: DETERMINE WIN OR LOSS
 function bubbleHit(bubble, column, duration) {
   console.log("hello");
 
@@ -131,7 +142,7 @@ function bubbleHit(bubble, column, duration) {
     new Audio("sounds/bubble-pop.wav").play();
     poppedBubbles++;
 
-    $('#missed-bubbles label').html(poppedBubbles);
+    $('#popped-bubbles label').html(poppedBubbles);
     $(bubble).animate(
       {
         opacity: 0,
@@ -151,7 +162,6 @@ function playerScore() {
  
     $('#score_dynamic').html(score);
 }
-
 
 function endGame() {
 
@@ -186,19 +196,12 @@ $('.reset_button button').on("click", function(e) {
   $('#score_dynamic').html(score);
 
   poppedBubbles = 0;
-  $('#missed-bubbles label').html(poppedBubbles);
+  $('#popped-bubbles label').html(poppedBubbles);
+
 
   startGame();
-})
 
 });
 
-function startGame() {
-  nextDrop(1800 , 2500);
-}
+});
 
-
-
-
-/// Jump (limited)!
-/// Play again button
