@@ -3,7 +3,7 @@ var man_column    = 0;
 var score         = 0;
 var poppedBubbles = 0;
 var flag = true;
-var myAudio = new Audio("sounds/bad-boys.wav")
+var myAudio = new Audio("sounds/gangnam_style.mp3")
 
 var highScore = localStorage.getItem("high_score");
 
