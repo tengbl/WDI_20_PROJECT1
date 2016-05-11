@@ -7,6 +7,8 @@ body {
   background-image: url("images/bubbles_background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
 }
 
 /*MAIN SCREEN*/

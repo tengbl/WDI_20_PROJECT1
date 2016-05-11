@@ -115,7 +115,7 @@ function dropBubble(column, duration) {
     
       var bubbleDrop = setTimeout(function(){
         dropBubble(Math.floor(Math.random()*20), duration);
-        nextDrop(duration - 10, interval - 30 );
+        nextDrop(duration - 10, interval - 40 );
       } , interval);
     
     } else {
