@@ -16,7 +16,7 @@ body {
   margin: 0 auto;
   margin-top: 40px;
   margin-bottom: 10px;
-  background-image: url("images/valleyanimated.jpg");
+  background-image: url("images/landscape2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -27,7 +27,7 @@ body {
   color: #003399;
   font-size: 55px;
   margin-left: 20px;
-  margin-top: 0px;
+  margin-top: 25px;
   opacity: 0.8;
   z-index: 5;
   position: absolute;
@@ -45,8 +45,8 @@ body {
 
 #man {
   width: 60px;
-  height: 65px;
-  background-image: url("images/skeebo.png");
+  height: 110px;
+  background-image: url("images/johnny.png");
   background-size: cover;
   border: 2px;
   position: absolute;

@@ -3,7 +3,7 @@ var man_column    = 0;
 var score         = 0;
 var poppedBubbles = 0;
 var flag = true;
-// var myAudio = new Audio("sounds/background_music.wav")
+var myAudio = new Audio("sounds/bad-boys.wav")
 
 var highScore = localStorage.getItem("high_score");
 
@@ -77,8 +77,8 @@ start_button.addEventListener("click", startGame)
 
 function startGame() {
 
-  // myAudio.play();
-  // myAudio.loop = true;
+  myAudio.play();
+  myAudio.loop = true;
 
   nextDrop(1800 , 1800);
 }
